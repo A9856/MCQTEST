@@ -9,381 +9,359 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <style>
-:root {
-    --primary: #4f46e5;
-    --secondary: #4338ca;
-    --success: #16a34a;
-    --danger: #dc2626;
-    --text: #1f2937;
-    --border: #dbeafe;
-}
+        :root {
+            --primary: #4f46e5;
+            --secondary: #4338ca;
+            --success: #16a34a;
+            --danger: #dc2626;
+            --text: #1f2937;
+            --border: #dbeafe;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
-    background: linear-gradient(
-        135deg,
-        #dbeafe,
-        #ede9fe,
-        #fce7f3
-    );
+            background: linear-gradient(135deg,
+                    #dbeafe,
+                    #ede9fe,
+                    #fce7f3);
 
-    min-height: 100vh;
+            min-height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-    padding: 20px;
-}
+            padding: 20px;
+        }
 
-.container {
-    width: 95%;
-    max-width: 1200px;
+        .container {
+            width: 95%;
+            max-width: 1200px;
 
-    background: rgba(255,255,255,.95);
+            background: rgba(255, 255, 255, .95);
 
-    backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
 
-    border-radius: 20px;
+            border-radius: 20px;
 
-    padding: 30px;
+            padding: 30px;
 
-    box-shadow:
-        0 10px 30px rgba(79,70,229,.15),
-        0 5px 15px rgba(0,0,0,.08);
-}
+            box-shadow:
+                0 10px 30px rgba(79, 70, 229, .15),
+                0 5px 15px rgba(0, 0, 0, .08);
+        }
 
-.question h2 {
-    color: var(--primary);
-    margin-bottom: 10px;
-    font-size: 1.8rem;
-}
+        .question h2 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
 
-.question p {
-    font-size: 1.3rem;
-    color: var(--text);
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
+        .question p {
+            font-size: 1.3rem;
+            color: var(--text);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
 
-.options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-label {
-    flex: 1 1 45%;
+        label {
+            flex: 1 1 45%;
 
-    display: flex;
-    align-items: center;
-    gap: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
 
-    padding: 16px;
+            padding: 16px;
 
-    border: 2px solid #dbeafe;
+            border: 2px solid #dbeafe;
 
-    border-radius: 12px;
+            border-radius: 12px;
 
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #f8fafc
-    );
+            background: linear-gradient(135deg,
+                    #ffffff,
+                    #f8fafc);
 
-    cursor: pointer;
+            cursor: pointer;
 
-    transition: all .3s ease;
+            transition: all .3s ease;
 
-    font-size: 1rem;
-    font-weight: 500;
+            font-size: 1rem;
+            font-weight: 500;
 
-    color: var(--text);
-}
+            color: var(--text);
+        }
 
-label:hover {
-    border-color: #6366f1;
-
-    background: linear-gradient(
-        135deg,
-        #eef2ff,
-        #f5f3ff
-    );
+        label:hover {
+            border-color: #6366f1;
 
-    transform: translateY(-3px);
+            background: linear-gradient(135deg,
+                    #eef2ff,
+                    #f5f3ff);
 
-    box-shadow: 0 6px 15px rgba(99,102,241,.15);
-}
+            transform: translateY(-3px);
 
-input[type="radio"] {
-    transform: scale(1.2);
-    accent-color: #4f46e5;
-}
+            box-shadow: 0 6px 15px rgba(99, 102, 241, .15);
+        }
 
-label:has(input[type="radio"]:checked) {
+        input[type="radio"] {
+            transform: scale(1.2);
+            accent-color: #4f46e5;
+        }
 
-    border: 2px solid #4f46e5;
+        label:has(input[type="radio"]:checked) {
 
-    background: linear-gradient(
-        135deg,
-        #e0e7ff,
-        #eef2ff
-    );
+            border: 2px solid #4f46e5;
 
-    box-shadow: 0 4px 12px rgba(79,70,229,.2);
-}
+            background: linear-gradient(135deg,
+                    #e0e7ff,
+                    #eef2ff);
 
-.navigation {
-    margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, .2);
+        }
 
-    display: flex;
-    justify-content: space-between;
-}
+        .navigation {
+            margin-top: 30px;
 
-button {
-    min-width: 120px;
+            display: flex;
+            justify-content: space-between;
+        }
 
-    padding: 12px 20px;
+        button {
+            min-width: 120px;
 
-    border: none;
-    border-radius: 10px;
+            padding: 12px 20px;
 
-    font-size: 15px;
-    font-weight: 600;
+            border: none;
+            border-radius: 10px;
 
-    cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
 
-    transition: .3s;
+            cursor: pointer;
 
-    color: white;
-}
+            transition: .3s;
 
-#prevBtn {
-    background: #6b7280;
-}
+            color: white;
+        }
 
-#prevBtn:hover {
-    background: #4b5563;
-}
+        #prevBtn {
+            background: #6b7280;
+        }
 
-#nextBtn {
-    background: linear-gradient(
-        135deg,
-        #4f46e5,
-        #6366f1
-    );
-}
+        #prevBtn:hover {
+            background: #4b5563;
+        }
 
-#nextBtn:hover {
-    background: linear-gradient(
-        135deg,
-        #4338ca,
-        #4f46e5
-    );
-}
+        #nextBtn {
+            background: linear-gradient(135deg,
+                    #4f46e5,
+                    #6366f1);
+        }
 
-#submitBtn {
-    background: linear-gradient(
-        135deg,
-        #16a34a,
-        #22c55e
-    );
-}
+        #nextBtn:hover {
+            background: linear-gradient(135deg,
+                    #4338ca,
+                    #4f46e5);
+        }
 
-#submitBtn:hover {
-    background: linear-gradient(
-        135deg,
-        #15803d,
-        #16a34a
-    );
-}
+        #submitBtn {
+            background: linear-gradient(135deg,
+                    #16a34a,
+                    #22c55e);
+        }
 
-.hidden {
-    display: none;
-}
+        #submitBtn:hover {
+            background: linear-gradient(135deg,
+                    #15803d,
+                    #16a34a);
+        }
 
-.result {
-    background: #f8fafc;
+        .hidden {
+            display: none;
+        }
 
-    padding: 18px;
+        .result {
+            background: #f8fafc;
 
-    margin-bottom: 15px;
+            padding: 18px;
 
-    border-radius: 12px;
+            margin-bottom: 15px;
 
-    border-left: 6px solid var(--primary);
+            border-radius: 12px;
 
-    color: var(--text);
+            border-left: 6px solid var(--primary);
 
-    font-size: 18px;
+            color: var(--text);
 
-    box-shadow: 0 2px 8px rgba(0,0,0,.05);
-}
+            font-size: 18px;
 
-.answer {
-    margin-top: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+        }
 
-    font-size: 15px;
+        .answer {
+            margin-top: 8px;
 
-    color: #4b5563;
-}
+            font-size: 15px;
 
-hr {
-    margin: 15px 0;
+            color: #4b5563;
+        }
 
-    border: none;
+        hr {
+            margin: 15px 0;
 
-    border-top: 1px solid #d1d5db;
-}
+            border: none;
 
-/* Popup */
+            border-top: 1px solid #d1d5db;
+        }
 
-#popupOverlay {
+        /* Popup */
 
-    position: fixed;
+        #popupOverlay {
 
-    inset: 0;
+            position: fixed;
 
-    background: linear-gradient(
-        rgba(79,70,229,.35),
-        rgba(168,85,247,.35)
-    );
+            inset: 0;
 
-    backdrop-filter: blur(6px);
+            background: linear-gradient(rgba(79, 70, 229, .35),
+                    rgba(168, 85, 247, .35));
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+            backdrop-filter: blur(6px);
 
-    z-index: 9999;
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-#popupBox {
+            z-index: 9999;
+        }
 
-    width: 420px;
+        #popupBox {
 
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #f8fafc
-    );
+            width: 420px;
 
-    padding: 35px;
+            background: linear-gradient(135deg,
+                    #ffffff,
+                    #f8fafc);
 
-    border-radius: 20px;
+            padding: 35px;
 
-    text-align: center;
+            border-radius: 20px;
 
-    border: 1px solid #e0e7ff;
+            text-align: center;
 
-    box-shadow:
-        0 15px 40px rgba(79,70,229,.20);
-}
+            border: 1px solid #e0e7ff;
 
-#popupBox h2 {
+            box-shadow:
+                0 15px 40px rgba(79, 70, 229, .20);
+        }
 
-    color: #4f46e5;
+        #popupBox h2 {
 
-    margin-bottom: 20px;
+            color: #4f46e5;
 
-    font-size: 28px;
-}
+            margin-bottom: 20px;
 
-#popupBox input {
+            font-size: 28px;
+        }
 
-    width: 100%;
+        #popupBox input {
 
-    padding: 14px;
+            width: 100%;
 
-    margin: 10px 0;
+            padding: 14px;
 
-    border: 2px solid #dbeafe;
+            margin: 10px 0;
 
-    border-radius: 10px;
+            border: 2px solid #dbeafe;
 
-    font-size: 16px;
+            border-radius: 10px;
 
-    transition: .3s;
-}
+            font-size: 16px;
 
-#popupBox input:focus {
+            transition: .3s;
+        }
 
-    outline: none;
+        #popupBox input:focus {
 
-    border-color: #4f46e5;
+            outline: none;
 
-    box-shadow: 0 0 10px rgba(79,70,229,.15);
-}
+            border-color: #4f46e5;
 
-#startQuizBtn {
+            box-shadow: 0 0 10px rgba(79, 70, 229, .15);
+        }
 
-    width: 100%;
+        #startQuizBtn {
 
-    background: linear-gradient(
-        135deg,
-        #4f46e5,
-        #7c3aed
-    );
+            width: 100%;
 
-    color: white;
+            background: linear-gradient(135deg,
+                    #4f46e5,
+                    #7c3aed);
 
-    border: none;
+            color: white;
 
-    padding: 14px;
+            border: none;
 
-    border-radius: 10px;
+            padding: 14px;
 
-    font-size: 17px;
+            border-radius: 10px;
 
-    font-weight: 600;
+            font-size: 17px;
 
-    cursor: pointer;
+            font-weight: 600;
 
-    margin-top: 12px;
+            cursor: pointer;
 
-    transition: .3s;
-}
+            margin-top: 12px;
 
-#startQuizBtn:hover {
+            transition: .3s;
+        }
 
-    transform: translateY(-2px);
+        #startQuizBtn:hover {
 
-    box-shadow: 0 8px 20px rgba(79,70,229,.25);
-}
+            transform: translateY(-2px);
 
-@media(max-width:768px){
+            box-shadow: 0 8px 20px rgba(79, 70, 229, .25);
+        }
 
-    .container{
-        padding:20px;
-    }
+        @media(max-width:768px) {
 
-    .question h2{
-        font-size:1.4rem;
-    }
+            .container {
+                padding: 20px;
+            }
 
-    .question p{
-        font-size:1.1rem;
-    }
+            .question h2 {
+                font-size: 1.4rem;
+            }
 
-    .options{
-        flex-direction:column;
-    }
+            .question p {
+                font-size: 1.1rem;
+            }
 
-    label{
-        flex:1 1 100%;
-    }
+            .options {
+                flex-direction: column;
+            }
 
-    #popupBox{
-        width:95%;
-    }
-}
+            label {
+                flex: 1 1 100%;
+            }
+
+            #popupBox {
+                width: 95%;
+            }
+        }
     </style>
 </head>
 
@@ -1246,6 +1224,26 @@ hr {
                 grade = "D";
             }
 
+            saveResultToFirebase({
+
+                studentName: studentName,
+
+                courseName: courseName,
+
+                totalQuestions: totalQuestions,
+
+                correctAnswers: correctAnswers,
+
+                wrongAnswers: totalQuestions - correctAnswers,
+
+                percentage: Number(percentage),
+
+                grade: grade,
+
+                date: new Date().toLocaleString()
+
+            });
+
             const resultHTML = `
     
     <div style="
@@ -1312,6 +1310,25 @@ hr {
             }).join("")}
     `;
 
+            saveResultToFirebase({
+
+                studentName: studentName,
+
+                courseName: courseName,
+
+                totalQuestions: totalQuestions,
+
+                correctAnswers: correctAnswers,
+
+                wrongAnswers: totalQuestions - correctAnswers,
+
+                percentage: percentage,
+
+                grade: grade,
+
+                date: new Date().toLocaleString()
+
+            });
             quizElement.innerHTML = resultHTML;
 
             nextBtn.style.display = "none";
@@ -1321,7 +1338,7 @@ hr {
             alert("Time's up! Submitting the quiz.");
             showResult();
         }
-           
+
         submitBtn.addEventListener("click", () => {
             showResult();
         });
@@ -1356,9 +1373,56 @@ hr {
 
                 renderQuestion();
                 updateNavigation();
-                  startQuestionTimer();
+                startQuestionTimer();
 
             });
+    </script>
+
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+
+        import {
+            getFirestore,
+            collection,
+            addDoc
+        }
+            from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZ8Od1KTOFTNL2yUN72Fxv1EFWRFZaid4",
+            authDomain: "mcq-test-ee55a.firebaseapp.com",
+            projectId: "mcq-test-ee55a",
+            storageBucket: "mcq-test-ee55a.firebasestorage.app",
+            messagingSenderId: "966944827158",
+            appId: "1:966944827158:web:2d0b89ead01a1c68ebd237",
+            measurementId: "G-Y3F5VFX2XT"
+        };
+
+        const app = initializeApp(firebaseConfig);
+
+        const db = getFirestore(app);
+
+        window.saveResultToFirebase = async function (data) {
+
+            try {
+
+                await addDoc(
+                    collection(db, "quizResults"),
+                    data
+                );
+
+                console.log("Saved");
+
+            }
+            catch (error) {
+
+                console.log(error);
+
+            }
+
+        }
+
     </script>
 </body>
 

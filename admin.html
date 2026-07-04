@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Admin Dashboard</title>
+
+<style>
+
+body{
+font-family:Arial;
+padding:20px;
+background:#f5f5f5;
+}
+
+h1{
+text-align:center;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#0d6efd;
+color:white;
+}
+
+tr:nth-child(even){
+background:#f2f2f2;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>MCQ Test Dashboard</h1>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+<th>Course</th>
+<th>Total</th>
+<th>Correct</th>
+<th>Wrong</th>
+<th>%</th>
+<th>Grade</th>
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tableData">
+
+</tbody>
+
+</table>
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+
+import {
+getFirestore,
+collection,
+getDocs
+}
+from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyCZ8Od1KTOFTNL2yUN72Fxv1EFWRFZaid4",
+
+authDomain: "mcq-test-ee55a.firebaseapp.com",
+
+projectId: "mcq-test-ee55a",
+
+storageBucket: "mcq-test-ee55a.firebasestorage.app",
+
+messagingSenderId: "966944827158",
+
+appId: "1:966944827158:web:2d0b89ead01a1c68ebd237",
+
+measurementId: "G-Y3F5VFX2XT"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+async function loadData(){
+
+const querySnapshot =
+await getDocs(collection(db,"quizResults"));
+
+let html="";
+
+querySnapshot.forEach((doc)=>{
+
+const d=doc.data();
+
+html+=`
+
+<tr>
+
+<td>${d.studentName || ""}</td>
+
+<td>${d.courseName || ""}</td>
+
+<td>${d.totalQuestions || ""}</td>
+
+<td>${d.correctAnswers || ""}</td>
+
+<td>${d.wrongAnswers || ""}</td>
+
+<td>${d.percentage || ""}%</td>
+
+<td>${d.grade || ""}</td>
+
+<td>${d.date || ""}</td>
+
+</tr>
+
+`;
+
+});
+
+document.getElementById("tableData").innerHTML=html;
+
+}
+
+loadData();
+
+</script>
+
+</body>
+
+</html>

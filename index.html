@@ -185,11 +185,83 @@
                 padding: 10px 15px;
             }
         }
+
+        #popupOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .6);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 9999;
+        }
+
+        #popupBox {
+            width: 400px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+        }
+
+        #popupBox h2 {
+            margin-bottom: 20px;
+        }
+
+        #popupBox input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        #startQuizBtn {
+            width: 100%;
+            background: #0d6efd;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        #startQuizBtn:hover {
+            background: #0b5ed7;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
+
+    <div id="popupOverlay">
+
+        <div id="popupBox">
+
+            <h2>Quiz Registration</h2>
+
+            <input type="text" id="username" placeholder="Enter Username">
+
+            <input type="text" id="course" value="Web Designing">
+
+            <button id="startQuizBtn">
+                Start Quiz
+            </button>
+
+        </div>
+
+    </div>
+    <div class="container" id="mainQuiz" style="display:none;">
         <div id="quiz">
         </div>
         <div class="navigation">
@@ -199,6 +271,8 @@
         </div>
     </div>
     <script>
+        let studentName = "";
+        let courseName = "";
         const questions = [
             {
                 question: "What does HTML stand for?",
@@ -955,7 +1029,7 @@
 
                         renderQuestion();
                         updateNavigation();
-                        startQuestionTimer();
+                        // startQuestionTimer();
 
                     } else {
 
@@ -980,11 +1054,7 @@
 
             }
         });
-        // function updateNavigation() {
-        //     prevBtn.disabled = cQuestion === 0;
-        //     nextBtn.disabled = cQuestion === totalQuestions - 1;
-        //     submitBtn.classList.toggle('hidden', cQuestion !== totalQuestions - 1);
-        // }
+
         function updateNavigation() {
 
             nextBtn.disabled = cQuestion === totalQuestions - 1;
@@ -994,61 +1064,44 @@
                 cQuestion !== totalQuestions - 1
             );
         }
-        // function showResult() {
-        //     const resultHTML = questions.map((question, index) => {
-        //         const isCorrect = answers[index] === question.answer;
-        //         return `
-        //             <div class="result">
-        //                 Question ${index + 1}: ${isCorrect ? 'Correct' : 'Incorrect'}
-        //                 <div class="answer">Your answer: ${answers[index] !== null ? question.options[answers[index]] : 'None'}</div>
-        //                 <div class="answer">Correct answer: ${question.options[question.answer]}</div>
-        //             </div>
-        //         `;
-        //     }).join('<hr><hr>');
-
-        //     quizElement.innerHTML = resultHTML;
-        //     prevBtn.classList.add('hidden');
-        //     nextBtn.classList.add('hidden');
-        //     submitBtn.classList.add('hidden');
-        // }
         function showResult() {
 
-    clearInterval(questionTimer);
+            clearInterval(questionTimer);
 
-    let correctAnswers = 0;
+            let correctAnswers = 0;
 
-    questions.forEach((question, index) => {
+            questions.forEach((question, index) => {
 
-        if (answers[index] === question.answer) {
-            correctAnswers++;
-        }
+                if (answers[index] === question.answer) {
+                    correctAnswers++;
+                }
 
-    });
+            });
 
-    let percentage = ((correctAnswers / totalQuestions) * 100).toFixed(2);
+            let percentage = ((correctAnswers / totalQuestions) * 100).toFixed(2);
 
-    let grade = "";
+            let grade = "";
 
-    if (percentage >= 90) {
-        grade = "S";
-    }
-    else if (percentage >= 80) {
-        grade = "A++";
-    }
-    else if (percentage >= 70) {
-        grade = "A";
-    }
-    else if (percentage >= 60) {
-        grade = "B";
-    }
-    else if (percentage >= 50) {
-        grade = "C";
-    }
-    else {
-        grade = "D";
-    }
+            if (percentage >= 90) {
+                grade = "S";
+            }
+            else if (percentage >= 80) {
+                grade = "A++";
+            }
+            else if (percentage >= 70) {
+                grade = "A";
+            }
+            else if (percentage >= 60) {
+                grade = "B";
+            }
+            else if (percentage >= 50) {
+                grade = "C";
+            }
+            else {
+                grade = "D";
+            }
 
-    const resultHTML = `
+            const resultHTML = `
     
     <div style="
         text-align:center;
@@ -1060,6 +1113,9 @@
     ">
 
         <h1>Quiz Result</h1>
+        <h2>Student Name : ${studentName}</h2>
+
+<h2>Course Name : ${courseName}</h2>
 
         <h2>Total Questions : ${totalQuestions}</h2>
 
@@ -1077,27 +1133,26 @@
 
     </div>
 
-    ${questions.map((question,index)=>{
+    ${questions.map((question, index) => {
 
-        const isCorrect =
-        answers[index] === question.answer;
+                const isCorrect =
+                    answers[index] === question.answer;
 
-        return `
+                return `
         <div class="result">
 
             <h3>
-                Question ${index+1}
+                Question ${index + 1}
                 :
                 ${isCorrect ? '✅ Correct' : '❌ Incorrect'}
             </h3>
 
             <div class="answer">
                 Your Answer :
-                ${
-                    answers[index] !== null
-                    ? question.options[answers[index]]
-                    : "Not Attempted"
-                }
+                ${answers[index] !== null
+                        ? question.options[answers[index]]
+                        : "Not Attempted"
+                    }
             </div>
 
             <div class="answer">
@@ -1109,28 +1164,19 @@
 
         <hr>
         `;
-    }).join("")}
+            }).join("")}
     `;
 
-    quizElement.innerHTML = resultHTML;
+            quizElement.innerHTML = resultHTML;
 
-    nextBtn.style.display = "none";
-    submitBtn.style.display = "none";
-}
+            nextBtn.style.display = "none";
+            submitBtn.style.display = "none";
+        }
         function Submit() {
             alert("Time's up! Submitting the quiz.");
             showResult();
         }
-        // prevBtn.addEventListener("click", () => {
-        //     cQuestion--;
-        //     renderQuestion();
-        //     updateNavigation();
-        // });
-        nextBtn.addEventListener("click", () => {
-            cQuestion++;
-            renderQuestion();
-            updateNavigation();
-        });
+           
         submitBtn.addEventListener("click", () => {
             showResult();
         });
@@ -1140,12 +1186,34 @@
             }
         });
         setTimeout(Submit, timerDuration);
+        document
+            .getElementById("startQuizBtn")
+            .addEventListener("click", () => {
 
-        renderQuestion();
-        updateNavigation();
+                studentName =
+                    document.getElementById("username").value.trim();
 
+                courseName =
+                    document.getElementById("course").value.trim();
 
-        startQuestionTimer();
+                if (studentName === "") {
+                    alert("Please Enter Username");
+                    return;
+                }
+
+                document
+                    .getElementById("popupOverlay")
+                    .style.display = "none";
+
+                document
+                    .getElementById("mainQuiz")
+                    .style.display = "block";
+
+                renderQuestion();
+                updateNavigation();
+                  startQuestionTimer();
+
+            });
     </script>
 </body>
 

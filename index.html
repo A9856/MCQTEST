@@ -1187,7 +1187,14 @@
                 cQuestion !== totalQuestions - 1
             );
         }
+        let resultSaved = false;
+        let attemptId = Date.now();
         function showResult() {
+            if (resultSaved) {
+                return;
+            }
+
+            resultSaved = true;
 
             clearInterval(questionTimer);
 
@@ -1224,25 +1231,32 @@
                 grade = "D";
             }
 
-            saveResultToFirebase({
+            if (!resultSaved) {
 
-                studentName: studentName,
+                resultSaved = true;
 
-                courseName: courseName,
+                saveResultToFirebase({
+                        attemptId: attemptId,
 
-                totalQuestions: totalQuestions,
+                    studentName: studentName,
 
-                correctAnswers: correctAnswers,
+                    courseName: courseName,
 
-                wrongAnswers: totalQuestions - correctAnswers,
+                    totalQuestions: totalQuestions,
 
-                percentage: Number(percentage),
+                    correctAnswers: correctAnswers,
 
-                grade: grade,
+                    wrongAnswers: totalQuestions - correctAnswers,
 
-                date: new Date().toLocaleString()
+                    percentage: Number(percentage),
 
-            });
+                    grade: grade,
+
+                    date: new Date().toLocaleString()
+
+                });
+
+            }
 
             const resultHTML = `
     

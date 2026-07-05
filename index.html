@@ -400,156 +400,306 @@
     <script>
         let studentName = "";
         let courseName = "";
-        const questions = [
+         const questions = [
             {
-                question: "What does HTML stand for?",
-                options: ["A. Hyper Text Markup Language", "B. High Text Machine Language", "C. Hyper Transfer Markup Language", "D. Hyper Tool Multi Language"],
+                question: "What does HTML stand for? / HTML ka full form kya hai?",
+                options: [
+                    "A. Hyper Text Markup Language",
+                    "B. High Text Machine Language",
+                    "C. Hyper Transfer Markup Language",
+                    "D. Hyper Tool Markup Language"
+                ],
                 answer: 0
             },
 
             {
-                question: "Which attribute specifies the URL of an image?",
-                options: ["A. link", "B. href", "C. src", "D. alt"],
+                question: "Which HTML tag is used for the largest heading? / Sabse badi heading ke liye kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;h6&gt;",
+                    "B. &lt;heading&gt;",
+                    "C. &lt;h1&gt;",
+                    "D. &lt;head&gt;"
+                ],
                 answer: 2
             },
+
             {
-                question: "Which CSS property changes text color?",
-                options: ["A. bgcolor", "B. text-color", "C. color", "D. font-color"],
-                answer: 2
-            },
-            {
-                question: "Which CSS property changes background color?",
-                options: ["A. background-color", "B. bgcolor", "C. color", "D. back-color"],
-                answer: 0
-            },
-            {
-                question: "Which CSS property controls text size?",
-                options: ["A. font-style", "B. font-size", "C. text-size", "D. size"],
-                answer: 1
-            },
-            {
-                question: "Which CSS property makes text bold?",
-                options: ["A. font-weight", "B. font-style", "C. text-bold", "D. bold"],
-                answer: 0
-            },
-            {
-                question: "Which CSS property aligns text horizontally?",
-                options: ["A. align", "B. text-align", "C. text-position", "D. position"],
-                answer: 1
-            },
-            {
-                question: "What does CSS stand for?",
-                options: ["A. Cascading Style Sheets", "B. Computer Style Sheets", "C. Creative Style System", "D. Colorful Style Sheets"],
-                answer: 0
-            },
-            {
-                question: "Which CSS property adds space inside an element?",
-                options: ["A. margin", "B. padding", "C. border", "D. spacing"],
-                answer: 1
-            },
-            {
-                question: "Which CSS property adds space outside an element?",
-                options: ["A. margin", "B. padding", "C. border-spacing", "D. outline"],
-                answer: 0
-            },
-            {
-                question: "Which CSS property is used to make an element flexible in Flexbox?",
-                options: ["A. flex", "B. display", "C. justify-content", "D. align-items"],
-                answer: 0
-            },
-            {
-                question: "Which property is used to round element corners?",
-                options: ["A. border-style", "B. border-radius", "C. radius", "D. corner-radius"],
+                question: "Which HTML tag is used for paragraph? / Paragraph ke liye kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;para&gt;",
+                    "B. &lt;p&gt;",
+                    "C. &lt;pg&gt;",
+                    "D. &lt;paragraph&gt;"
+                ],
                 answer: 1
             },
 
             {
-                question: "Which CSS property changes font family?",
-                options: ["A. font-name", "B. font-style", "C. font-family", "D. family"],
-                answer: 2
-            },
-            {
-                question: "Which CSS property controls element transparency?",
-                options: ["A. visibility", "B. transparent", "C. opacity", "D. alpha"],
-                answer: 2
-            },
-            {
-                question: "Which HTML input type hides entered characters?",
-                options: ["A. text", "B. hidden", "C. password", "D. secure"],
-                answer: 2
-            },
-            {
-                question: "Which CSS property controls stacking order?",
-                options: ["A. layer", "B. z-index", "C. index", "D. stack"],
-                answer: 1
-            },
-            {
-                question: "Which HTML tag is used to create a hyperlink?",
-                options: ["A. &lt;link&gt;", "B. &lt;a&gt;", "C. &lt;href&gt;", "D. &lt;url&gt;"],
-                answer: 1
-            },
-            {
-                question: "Which tag is used for the largest heading in HTML?",
-                options: ["A. &lt;h6&gt;", "B. &lt;heading&gt;", "C. &lt;h1&gt;", "D. &lt;head&gt;"],
-                answer: 2
-            },
-            {
-                question: "Which HTML tag is used to insert an image?",
-                options: ["A. &lt;image&gt;", "B. &lt;img&gt;", "C. &lt;picture&gt;", "D. &lt;src&gt;"],
-                answer: 1
-            },
-            {
-                question: "Which HTML tag is used to create an ordered list?",
-                options: ["A. &lt;ul&gt;", "B. &lt;ol&gt;", "C. &lt;li&gt;", "D. &lt;list&gt;"],
-                answer: 1
-            },
-            {
-                question: "Which HTML tag creates a table row?",
-                options: ["A. &lt;td&gt;", "B. &lt;th&gt;", "C. &lt;tr&gt;", "D. &lt;table&gt;"],
-                answer: 2
-            },
-            {
-                question: "Which HTML tag is used for line break?",
-                options: ["A. &lt;break&gt;", "B. &lt;lb&gt;", "C. &lt;br&gt;", "D. &lt;newline&gt;"],
-                answer: 2
-            },
-            {
-                question: "Which HTML tag contains metadata?",
-                options: ["A. &lt;body&gt;", "B. &lt;meta&gt;", "C. &lt;head&gt;", "D. &lt;title&gt;"],
-                answer: 2
-            },
-            {
-                question: "Which HTML tag is used for paragraph?",
-                options: ["A. &lt;paragraph&gt;", "B. &lt;p&gt;", "C. &lt;para&gt;", "D. &lt;pg&gt;"],
-                answer: 1
-            },
-            {
-                question: "Which HTML element creates a dropdown list?",
-                options: ["A. &lt;option&gt;", "B. &lt;input&gt;", "C. &lt;select&gt;", "D. &lt;dropdown&gt;"],
-                answer: 2
-            },
-            {
-                question: "Identify the correct HTML syntax for creating a hyperlink.",
+                question: "Which tag creates a hyperlink? / Hyperlink banane ke liye kaunsa tag use hota hai?",
                 options: [
-                    "A. &lt;a href='page.html'&gt;Click Here&lt;/a&gt;",
-                    "B. &lt;a&gt;href='page.html' Click Here&lt;/a&gt;",
-                    "C. &lt;link='page.html'&gt;Click Here&lt;/link&gt;",
-                    "D. &lt;href='page.html'&gt;Click Here&lt;/href&gt;"
+                    "A. &lt;href&gt;",
+                    "B. &lt;url&gt;",
+                    "C. &lt;a&gt;",
+                    "D. &lt;link&gt;"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Correct syntax for hyperlink? / Hyperlink ki sahi syntax kaunsi hai?",
+                options: [
+                    "A. &lt;a href='page.html'&gt;Click&lt;/a&gt;",
+                    "B. &lt;link='page.html'&gt;",
+                    "C. &lt;href='page.html'&gt;",
+                    "D. &lt;a&gt;page.html&lt;/a&gt;"
                 ],
                 answer: 0
             },
+
             {
-                question: "Identify the correct syntax for inserting an image.",
+                question: "Which tag is used for image? / Image lagane ke liye kaunsa tag use hota hai?",
                 options: [
-                    "A. &lt;image src='pic.jpg'&gt;",
-                    "B. &lt;img src='pic.jpg' alt='Image'&gt;",
-                    "C. &lt;img&gt;pic.jpg&lt;/img&gt;",
-                    "D. &lt;picture='pic.jpg'&gt;"
+                    "A. &lt;image&gt;",
+                    "B. &lt;picture&gt;",
+                    "C. &lt;img&gt;",
+                    "D. &lt;src&gt;"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Correct image syntax? / Sahi image syntax kaunsi hai?",
+                options: [
+                    "A. &lt;img src='photo.jpg' alt='Photo'&gt;",
+                    "B. &lt;image src='photo.jpg'&gt;",
+                    "C. &lt;img&gt;photo.jpg&lt;/img&gt;",
+                    "D. &lt;picture='photo.jpg'&gt;"
+                ],
+                answer: 0
+            },
+
+            {
+                question: "Which tag is used for line break? / Line break ke liye kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;break&gt;",
+                    "B. &lt;br&gt;",
+                    "C. &lt;lb&gt;",
+                    "D. &lt;newline&gt;"
                 ],
                 answer: 1
             },
+
             {
-                question: "Which HTML syntax is WRONG?",
+                question: "Which tag creates an ordered list? / Ordered list ke liye kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;ul&gt;",
+                    "B. &lt;list&gt;",
+                    "C. &lt;ol&gt;",
+                    "D. &lt;li&gt;"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Which tag creates an unordered list? / Unordered list ke liye kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;ol&gt;",
+                    "B. &lt;ul&gt;",
+                    "C. &lt;list&gt;",
+                    "D. &lt;li&gt;"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which tag represents list item? / List item ke liye kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;item&gt;",
+                    "B. &lt;ul&gt;",
+                    "C. &lt;li&gt;",
+                    "D. &lt;ol&gt;"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Which tag creates a table? / Table banane ke liye kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;tb&gt;",
+                    "B. &lt;table&gt;",
+                    "C. &lt;tr&gt;",
+                    "D. &lt;td&gt;"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which tag creates a table row? / Table row ke liye kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;tr&gt;",
+                    "B. &lt;td&gt;",
+                    "C. &lt;th&gt;",
+                    "D. &lt;row&gt;"
+                ],
+                answer: 0
+            },
+
+            {
+                question: "Which tag creates a table cell? / Table data cell ke liye kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;th&gt;",
+                    "B. &lt;tr&gt;",
+                    "C. &lt;table&gt;",
+                    "D. &lt;td&gt;"
+                ],
+                answer: 3
+            },
+
+            {
+                question: "Which tag creates table heading cell? / Table heading cell ke liye kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;td&gt;",
+                    "B. &lt;th&gt;",
+                    "C. &lt;tr&gt;",
+                    "D. &lt;thead&gt;"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which tag contains page title? / Page title kis tag me likhte hain?",
+                options: [
+                    "A. &lt;head&gt;",
+                    "B. &lt;body&gt;",
+                    "C. &lt;title&gt;",
+                    "D. &lt;meta&gt;"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Which tag contains metadata? / Metadata kis tag me hota hai?",
+                options: [
+                    "A. &lt;head&gt;",
+                    "B. &lt;body&gt;",
+                    "C. &lt;footer&gt;",
+                    "D. &lt;main&gt;"
+                ],
+                answer: 0
+            },
+
+            {
+                question: "Which HTML5 tag is used for navigation? / Navigation ke liye HTML5 kaunsa tag use karta hai?",
+                options: [
+                    "A. &lt;navigation&gt;",
+                    "B. &lt;nav&gt;",
+                    "C. &lt;menu&gt;",
+                    "D. &lt;navigate&gt;"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which HTML5 tag is used for footer? / Footer ke liye kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;foot&gt;",
+                    "B. &lt;bottom&gt;",
+                    "C. &lt;footer&gt;",
+                    "D. &lt;end&gt;"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Which HTML5 tag is used for header section? / Header section ke liye kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;header&gt;",
+                    "B. &lt;head&gt;",
+                    "C. &lt;top&gt;",
+                    "D. &lt;heading&gt;"
+                ],
+                answer: 0
+            },
+
+            {
+                question: "Which input type hides characters? / Password ko hide karne ke liye kaunsa input type use hota hai?",
+                options: [
+                    "A. text",
+                    "B. hidden",
+                    "C. secure",
+                    "D. password"
+                ],
+                answer: 3
+            },
+
+            {
+                question: "Which input type is used for email? / Email input ke liye kaunsa type use hota hai?",
+                options: [
+                    "A. mail",
+                    "B. email",
+                    "C. text-email",
+                    "D. gmail"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which input type is used for number? / Number input ke liye kaunsa type use hota hai?",
+                options: [
+                    "A. numeric",
+                    "B. integer",
+                    "C. number",
+                    "D. digit"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Which tag creates dropdown list? / Dropdown list ke liye kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;dropdown&gt;",
+                    "B. &lt;option&gt;",
+                    "C. &lt;select&gt;",
+                    "D. &lt;list&gt;"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Which tag is used inside select? / Select ke andar kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;choice&gt;",
+                    "B. &lt;option&gt;",
+                    "C. &lt;item&gt;",
+                    "D. &lt;value&gt;"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which tag creates a form? / Form banane ke liye kaunsa tag use hota hai?",
+                options: [
+                    "A. &lt;input&gt;",
+                    "B. &lt;data&gt;",
+                    "C. &lt;form&gt;",
+                    "D. &lt;submit&gt;"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Which button submits a form? / Form submit karne ke liye kaunsa type use hota hai?",
+                options: [
+                    "A. type='send'",
+                    "B. type='button'",
+                    "C. type='submit'",
+                    "D. type='ok'"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Which syntax is WRONG? / Kaunsi syntax galat hai?",
                 options: [
                     "A. &lt;p&gt;Hello&lt;/p&gt;",
                     "B. &lt;h1&gt;Title&lt;/h1&gt;",
@@ -558,389 +708,294 @@
                 ],
                 answer: 3
             },
+
             {
-                question: "Identify the correct W3.CSS button syntax.",
+                question: "Which tag is used for audio player? / Audio player ke liye kaunsa tag use hota hai?",
                 options: [
-                    "A. &lt;button class='w3-button'&gt;Click&lt;/button&gt;",
-                    "B. &lt;button class='button'&gt;Click&lt;/button&gt;",
-                    "C. &lt;w3-button&gt;Click&lt;/w3-button&gt;",
-                    "D. &lt;button w3-button&gt;Click&lt;/button&gt;"
+                    "A. &lt;sound&gt;",
+                    "B. &lt;music&gt;",
+                    "C. &lt;audio controls&gt;&lt;/audio&gt;",
+                    "D. &lt;mp3&gt;"
                 ],
-                answer: 0
+                answer: 2
             },
+
             {
-                question: "Identify the correct W3.CSS card syntax.",
+                question: "Which tag is used for video player? / Video player ke liye kaunsa tag use hota hai?",
                 options: [
-                    "A. &lt;div class='w3-card'&gt;Content&lt;/div&gt;",
-                    "B. &lt;div class='card-w3'&gt;Content&lt;/div&gt;",
-                    "C. &lt;card class='w3'&gt;Content&lt;/card&gt;",
-                    "D. &lt;w3-card&gt;Content&lt;/w3-card&gt;"
-                ],
-                answer: 0
-            },
-            {
-                question: "Which syntax correctly links an external CSS file?",
-                options: [
-                    "A. &lt;css src='style.css'&gt;",
-                    "B. &lt;link rel='stylesheet' href='style.css'&gt;",
-                    "C. &lt;style src='style.css'&gt;",
-                    "D. &lt;stylesheet href='style.css'&gt;"
-                ],
-                answer: 1
-            },
-            {
-                question: "Identify the correct HTML syntax for a paragraph.",
-                options: [
-                    "A. &lt;p&gt;Hello&lt;/p&gt;",
-                    "B. &lt;paragraph&gt;Hello&lt;/paragraph&gt;",
-                    "C. &lt;para&gt;Hello&lt;/para&gt;",
-                    "D. &lt;p&gt;Hello&lt;p&gt;"
-                ],
-                answer: 0
-            },
-            {
-                question: "Which HTML syntax is correct for a heading?",
-                options: [
-                    "A. &lt;heading&gt;Title&lt;/heading&gt;",
-                    "B. &lt;h1&gt;Title&lt;/h1&gt;",
-                    "C. &lt;head1&gt;Title&lt;/head1&gt;",
-                    "D. &lt;title&gt;Title&lt;/title&gt;"
-                ],
-                answer: 1
-            },
-            {
-                question: "Identify the correct HTML5 semantic tag for navigation links.",
-                options: [
-                    "A. &lt;navigation&gt;",
-                    "B. &lt;nav&gt;",
-                    "C. &lt;navigate&gt;",
-                    "D. &lt;menu&gt;"
-                ],
-                answer: 1
-            },
-            {
-                question: "Identify the correct HTML5 semantic tag for footer.",
-                options: [
-                    "A. &lt;bottom&gt;",
-                    "B. &lt;footer&gt;",
-                    "C. &lt;end&gt;",
-                    "D. &lt;foot&gt;"
-                ],
-                answer: 1
-            },
-            {
-                question: "Which syntax correctly creates an audio player?",
-                options: [
-                    "A. &lt;audio controls&gt;&lt;/audio&gt;",
-                    "B. &lt;sound controls&gt;&lt;/sound&gt;",
-                    "C. &lt;music&gt;&lt;/music&gt;",
-                    "D. &lt;audio-player&gt;&lt;/audio-player&gt;"
-                ],
-                answer: 0
-            },
-            {
-                question: "Which syntax correctly creates a video player?",
-                options: [
-                    "A. &lt;media&gt;&lt;/media&gt;",
+                    "A. &lt;movie&gt;",
                     "B. &lt;video controls&gt;&lt;/video&gt;",
-                    "C. &lt;movie&gt;&lt;/movie&gt;",
-                    "D. &lt;play-video&gt;&lt;/play-video&gt;"
+                    "C. &lt;media&gt;",
+                    "D. &lt;play&gt;"
                 ],
                 answer: 1
             },
             {
-                question: "Which keyword is used to declare a variable in JavaScript?",
-                options: ["A. int", "B. var", "C. string", "D. define"],
-                answer: 1
-            },
-            {
-                question: "Which keyword declares a block-scoped variable?",
-                options: ["A. var", "B. let", "C. define", "D. static"],
-                answer: 1
-            },
-            {
-                question: "Which keyword is used to declare a constant?",
-                options: ["A. fixed", "B. constant", "C. const", "D. final"],
-                answer: 2
-            },
-            {
-                question: "Which symbol is used for single-line comments?",
-                options: ["A. &lt;!-- --&gt;", "B. ##", "C. //", "D. **"],
-                answer: 2
-            },
-            {
-                question: "What is the output type of typeof 10?",
-                options: ["A. string", "B. number", "C. integer", "D. object"],
-                answer: 1
-            },
-            {
-                question: "Which operator checks value and datatype both?",
-                options: ["A. =", "B. ==", "C. ===", "D. !="],
-                answer: 2
-            },
-            {
-                question: "Which method adds an element at the end of an array?",
-                options: ["A. pop()", "B. shift()", "C. push()", "D. unshift()"],
-                answer: 2
-            },
-            {
-                question: "Which method removes the last element of an array?",
-                options: ["A. pop()", "B. push()", "C. shift()", "D. splice()"],
-                answer: 0
-            },
-            {
-                question: "Which method adds an element at the beginning of an array?",
-                options: ["A. push()", "B. unshift()", "C. shift()", "D. concat()"],
-                answer: 1
-            },
-            {
-                question: "Which method removes the first element of an array?",
-                options: ["A. shift()", "B. pop()", "C. splice()", "D. remove()"],
-                answer: 0
-            },
-            {
-                question: "How do you write an IF condition?",
-                options: ["A. if x=5", "B. if(x==5)", "C. if x==5 then", "D. if : x==5"],
-                answer: 1
-            },
-            {
-                question: "Which loop executes at least once?",
-                options: ["A. for", "B. while", "C. do...while", "D. foreach"],
-                answer: 2
-            },
-            {
-                question: "Which function displays an alert box?",
-                options: ["A. prompt()", "B. alert()", "C. confirm()", "D. display()"],
-                answer: 1
-            },
-            {
-                question: "Which function takes input from the user?",
-                options: ["A. prompt()", "B. input()", "C. get()", "D. alert()"],
-                answer: 0
-            },
-            {
-                question: "Which function asks for OK or Cancel?",
-                options: ["A. prompt()", "B. ask()", "C. alert()", "D. confirm()"],
-                answer: 3
-            },
-            {
-                question: "Which method converts JSON string into object?",
-                options: ["A. JSON.stringify()", "B. JSON.parse()", "C. JSON.object()", "D. JSON.convert()"],
-                answer: 1
-            },
-            {
-                question: "Which method converts object into JSON string?",
-                options: ["A. JSON.parse()", "B. JSON.toString()", "C. JSON.stringify()", "D. JSON.objectify()"],
-                answer: 2
-            },
-            {
-                question: "Which method selects an element by ID?",
-                options: ["A. getElement()", "B. query()", "C. getElementById()", "D. getById()"],
-                answer: 2
-            },
-            {
-                question: "Which method selects elements using CSS selectors?",
-                options: ["A. querySelector()", "B. getElementById()", "C. getElements()", "D. selector()"],
-                answer: 0
-            },
-            {
-                question: "Which event occurs when a button is clicked?",
-                options: ["A. onmouseover", "B. onclick", "C. onchange", "D. onload"],
-                answer: 1
-            },
-            {
-                question: "Which event occurs when a page finishes loading?",
-                options: ["A. onload", "B. onclick", "C. onfocus", "D. onsubmit"],
-                answer: 0
-            },
-            {
-                question: "Which event occurs when form data changes?",
-                options: ["A. onsubmit", "B. onchange", "C. onload", "D. onkeydown"],
-                answer: 1
-            },
-            {
-                question: "What does Array.isArray() return?",
-                options: ["A. Array length", "B. Boolean value", "C. Object", "D. String"],
-                answer: 1
-            },
-            {
-                question: "Which JavaScript method joins array elements into a string?",
-                options: ["A. split()", "B. join()", "C. concat()", "D. slice()"],
-                answer: 1
-            },
-            {
-                question: "Which JavaScript method converts a string to uppercase?",
-                options: ["A. upper()", "B. uppercase()", "C. toUpperCase()", "D. toUpper()"],
-                answer: 2
-            },
-            {
-                question: "AngularJS is maintained by which company?",
-                options: ["A. Microsoft", "B. Google", "C. Meta", "D. Amazon"],
-                answer: 1
-            },
-            {
-                question: "Which directive is used to initialize AngularJS application?",
-                options: ["A. ng-start", "B. ng-app", "C. ng-init", "D. ng-controller"],
-                answer: 1
-            },
-            {
-                question: "Which directive is used for data binding?",
-                options: ["A. ng-bind", "B. ng-model", "C. ng-repeat", "D. ng-show"],
-                answer: 0
-            },
-            {
-                question: "Which directive binds input value to data?",
-                options: ["A. ng-bind", "B. ng-controller", "C. ng-model", "D. ng-view"],
-                answer: 2
-            },
-            {
-                question: "Which directive repeats HTML elements?",
-                options: ["A. ng-copy", "B. ng-repeat", "C. ng-loop", "D. ng-for"],
-                answer: 1
-            },
-            {
-                question: "Which directive hides an element?",
-                options: ["A. ng-hide", "B. ng-remove", "C. ng-delete", "D. ng-invisible"],
-                answer: 0
-            },
-            {
-                question: "Which directive shows an element conditionally?",
-                options: ["A. ng-visible", "B. ng-display", "C. ng-show", "D. ng-open"],
-                answer: 2
-            },
-            {
-                question: "Which directive is used for click events?",
-                options: ["A. ng-click", "B. ng-event", "C. ng-tap", "D. ng-press"],
-                answer: 0
-            },
-            {
-                question: "Which directive is used for conditional statements?",
-                options: ["A. ng-if", "B. ng-condition", "C. ng-check", "D. ng-case"],
-                answer: 0
-            },
-            {
-                question: "Which AngularJS service is used for AJAX requests?",
-                options: ["A. $request", "B. $ajax", "C. $http", "D. $service"],
-                answer: 2
-            },
-            {
-                question: "Which symbol is used for AngularJS expressions?",
-                options: ["A. [[ ]]", "B. {{ }}", "C. (( ))", "D. << >>"],
-                answer: 1
-            },
-            {
-                question: "Which object connects controller and view?",
-                options: ["A. $route", "B. $scope", "C. $root", "D. $model"],
-                answer: 1
-            },
-            {
-                question: "AngularJS follows which architecture?",
-                options: ["A. MVC", "B. MVP", "C. MVVM", "D. Both MVC and MVVM"],
-                answer: 3
-            },
-            {
-                question: "Which directive is used to include external HTML?",
-                options: ["A. ng-import", "B. ng-include", "C. ng-load", "D. ng-html"],
-                answer: 1
-            },
-            {
-                question: "Which AngularJS service changes page URL?",
-                options: ["A. $http", "B. $scope", "C. $location", "D. $window"],
-                answer: 2
-            },
-            {
-                question: "What does W3.CSS stand for?",
-                options: ["A. World Wide Web CSS", "B. W3Schools CSS Framework", "C. Web CSS", "D. Wide Web CSS"],
-                answer: 1
-            },
-            {
-                question: "Which class creates a container in W3.CSS?",
-                options: ["A. w3-box", "B. w3-container", "C. w3-wrapper", "D. w3-content"],
-                answer: 1
-            },
-            {
-                question: "Which class creates a button in W3.CSS?",
-                options: ["A. w3-btn", "B. w3-button", "C. w3-click", "D. w3-control"],
-                answer: 1
-            },
-            {
-                question: "Which class applies a card effect?",
-                options: ["A. w3-card", "B. w3-panel", "C. w3-shadow", "D. w3-box"],
-                answer: 0
-            },
-            {
-                question: "Which class centers text in W3.CSS?",
-                options: ["A. w3-center", "B. w3-text-center", "C. w3-align", "D. w3-middle"],
-                answer: 0
-            },
-            {
-                question: "Which class hides an element?",
-                options: ["A. w3-hide", "B. w3-hidden", "C. w3-none", "D. w3-display-none"],
-                answer: 0
-            },
-            {
-                question: "Which class makes an image responsive?",
-                options: ["A. w3-img", "B. w3-image", "C. w3-responsive", "D. w3-fluid"],
-                answer: 1
-            },
-            {
-                question: "Which class adds blue background color?",
-                options: ["A. w3-primary", "B. w3-blue", "C. w3-bg-blue", "D. w3-color-blue"],
-                answer: 1
-            },
-            {
-                question: "Which class creates a modal in W3.CSS?",
-                options: ["A. w3-popup", "B. w3-window", "C. w3-modal", "D. w3-dialog"],
-                answer: 2
-            },
-            {
-                question: "Which class is used for responsive row layout?",
-                options: ["A. w3-row", "B. w3-grid", "C. w3-layout", "D. w3-flex"],
-                answer: 0
-            },
-            {
-                question: "Which HTML syntax is WRONG?",
+                question: "What does CSS stand for? / CSS ka full form kya hai?",
                 options: [
-                    "A. <p>Hello</p>",
-                    "B. <h1>Title</h1>",
-                    "C. <body>Hello</body>",
-                    "D. <p>Hello<p>"
-                ],
-                answer: 3
-            },
-            {
-                question: "Identify the correct CSS syntax.",
-                options: [
-                    "A. color = red;",
-                    "B. color:red;",
-                    "C. color:red",
-                    "D. color => red;"
-                ],
-                answer: 1
-            },
-            {
-                question: "Which CSS syntax is correct for background color?",
-                options: [
-                    "A. background-color: blue;",
-                    "B. background color = blue;",
-                    "C. bgcolor: blue;",
-                    "D. background => blue;"
+                    "A. Cascading Style Sheets",
+                    "B. Computer Style Sheets",
+                    "C. Creative Style System",
+                    "D. Colorful Style Sheets"
                 ],
                 answer: 0
             },
 
             {
-                question: "Which Flexbox syntax is correct?",
+                question: "Which CSS property changes text color? / Text color badalne ke liye kaunsi property use hoti hai?",
                 options: [
-                    "A. display:flex;",
-                    "B. display-flex;",
-                    "C. flex-display;",
-                    "D. display=>flex;"
+                    "A. text-color",
+                    "B. font-color",
+                    "C. color",
+                    "D. bgcolor"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Correct CSS syntax? / Sahi CSS syntax kaunsi hai?",
+                options: [
+                    "A. color=red;",
+                    "B. color:red;",
+                    "C. color=>red;",
+                    "D. color red;"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which property changes background color? / Background color badalne ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. bgcolor",
+                    "B. background-color",
+                    "C. color",
+                    "D. back-color"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which property changes font size? / Font size badalne ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. text-size",
+                    "B. size",
+                    "C. font-size",
+                    "D. font-style"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Which property makes text bold? / Text ko bold karne ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. font-weight",
+                    "B. bold",
+                    "C. text-bold",
+                    "D. font-style"
                 ],
                 answer: 0
             },
+
             {
-                question: "Which Grid syntax is correct?",
+                question: "Which property changes font family? / Font family change karne ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. font-name",
+                    "B. family",
+                    "C. font-family",
+                    "D. text-family"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Which property aligns text horizontally? / Text align karne ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. align",
+                    "B. text-align",
+                    "C. position",
+                    "D. center"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which syntax centers text? / Text center karne ki sahi syntax kaunsi hai?",
+                options: [
+                    "A. text-align:center;",
+                    "B. center-text:true;",
+                    "C. text:center;",
+                    "D. align:center;"
+                ],
+                answer: 0
+            },
+
+            {
+                question: "Which property adds space inside an element? / Element ke andar space dene ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. margin",
+                    "B. padding",
+                    "C. border",
+                    "D. spacing"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which property adds space outside an element? / Element ke bahar space dene ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. padding",
+                    "B. border",
+                    "C. margin",
+                    "D. outline"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Which property rounds element corners? / Corners round karne ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. corner-radius",
+                    "B. radius",
+                    "C. border-radius",
+                    "D. round-corner"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Correct border radius syntax? / Border radius ki sahi syntax kaunsi hai?",
+                options: [
+                    "A. border-radius:10px;",
+                    "B. radius:10px;",
+                    "C. corner-radius:10px;",
+                    "D. border-round:10px;"
+                ],
+                answer: 0
+            },
+
+            {
+                question: "Which property controls transparency? / Transparency control karne ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. transparent",
+                    "B. alpha",
+                    "C. opacity",
+                    "D. visibility"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Which syntax makes an element 50% transparent? / Element ko 50% transparent karne ki syntax?",
+                options: [
+                    "A. opacity:0.5;",
+                    "B. opacity:50;",
+                    "C. transparent:50;",
+                    "D. alpha:50;"
+                ],
+                answer: 0
+            },
+
+            {
+                question: "Which CSS selector selects all elements? / Sabhi elements select karne ke liye kaunsa selector use hota hai?",
+                options: [
+                    "A. #",
+                    "B. .",
+                    "C. *",
+                    "D. all"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Which selector selects element by id? / ID ke through element select karne ke liye kaunsa selector use hota hai?",
+                options: [
+                    "A. .demo",
+                    "B. #demo",
+                    "C. *demo",
+                    "D. demo#"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which selector selects elements by class? / Class ke through element select karne ke liye kaunsa selector use hota hai?",
+                options: [
+                    "A. #box",
+                    "B. .box",
+                    "C. *box",
+                    "D. box#"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Correct CSS rule for paragraph? / Paragraph ke liye sahi CSS rule kaunsa hai?",
+                options: [
+                    "A. p { color:red; }",
+                    "B. p=color:red;",
+                    "C. p(color:red)",
+                    "D. p=>color:red;"
+                ],
+                answer: 0
+            },
+
+            {
+                question: "Which property creates shadow? / Shadow lagane ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. shadow",
+                    "B. text-shadow",
+                    "C. box-shadow",
+                    "D. element-shadow"
+                ],
+                answer: 2
+            },
+
+            {
+                question: "Correct shadow syntax? / Box shadow ki sahi syntax kaunsi hai?",
+                options: [
+                    "A. box-shadow:2px 2px 5px gray;",
+                    "B. shadow-box:2px;",
+                    "C. shadow:true;",
+                    "D. box=shadow;"
+                ],
+                answer: 0
+            },
+
+            {
+                question: "Which property is used for Flexbox? / Flexbox enable karne ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. display:flex;",
+                    "B. flex-display;",
+                    "C. display-flex;",
+                    "D. flex:true;"
+                ],
+                answer: 0
+            },
+
+            {
+                question: "Which property aligns items horizontally in Flexbox? / Flexbox me horizontal alignment ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. align-items",
+                    "B. justify-content",
+                    "C. flex-align",
+                    "D. horizontal-align"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which property aligns items vertically in Flexbox? / Flexbox me vertical alignment ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. justify-content",
+                    "B. align-items",
+                    "C. vertical-align",
+                    "D. item-align"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which syntax creates CSS Grid? / CSS Grid ki sahi syntax kaunsi hai?",
                 options: [
                     "A. display:grid;",
                     "B. grid-display;",
@@ -951,134 +1006,386 @@
             },
 
             {
-                question: "Identify the correct CSS syntax.",
-                options: ["A. color:red;", "B. color=red;", "C. color=>red;", "D. color:red"],
-                answer: 0
-            },
-            {
-                question: "Which CSS syntax correctly sets background color?",
-                options: ["A. background-color:blue;", "B. background color=blue;", "C. bgcolor:blue;", "D. bg-color:blue;"],
-                answer: 0
-            },
-            {
-                question: "Identify the correct CSS rule.",
-                options: ["A. p { color:red; }", "B. p = color:red;", "C. p(color:red)", "D. p => color:red"],
-                answer: 0
-            },
-            {
-                question: "Which CSS syntax correctly changes font size?",
-                options: ["A. font-size:20px;", "B. fontsize=20px;", "C. size-font:20px;", "D. text-size:20px;"],
-                answer: 0
-            },
-            {
-                question: "Which CSS syntax is WRONG?",
-                options: ["A. margin:10px;", "B. padding:20px;", "C. border=1px solid black;", "D. width:100px;"],
-                answer: 2
-            },
-            {
-                question: "Identify the correct Flexbox syntax.",
-                options: ["A. display:flex;", "B. display-flex;", "C. flex-display;", "D. flex=true;"],
-                answer: 0
-            },
-            {
-                question: "Identify the correct CSS Grid syntax.",
-                options: ["A. display:grid;", "B. grid-display;", "C. display-grid;", "D. grid:true;"],
-                answer: 0
-            },
-            {
-                question: "Which syntax correctly centers text?",
-                options: ["A. text-align:center;", "B. align-text:center;", "C. center-text:true;", "D. text:center;"],
-                answer: 0
-            },
-            {
-                question: "Which syntax correctly rounds corners?",
-                options: ["A. border-radius:10px;", "B. radius-border:10px;", "C. corner-radius:10px;", "D. border-corner:10px;"],
-                answer: 0
-            },
-            {
-                question: "Which syntax correctly adds a shadow?",
-                options: ["A. box-shadow:2px 2px 5px gray;", "B. shadow-box:2px;", "C. element-shadow:true;", "D. box=shadow;"],
-                answer: 0
-            },
-            {
-                question: "Which syntax correctly applies a blue W3.CSS background?",
-                options: ["A. class='w3-blue'", "B. class='blue-w3'", "C. class='w3-bg-blue'", "D. class='bg-blue'"],
+                question: "Which property defines grid columns? / Grid columns define karne ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. grid-template-columns",
+                    "B. grid-columns",
+                    "C. columns-grid",
+                    "D. template-columns"
+                ],
                 answer: 0
             },
 
             {
-                question: "Which CSS selector selects all elements?",
-                options: ["A. #", "B. .", "C. *", "D. all"],
+                question: "Which property sets absolute position? / Absolute position ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. position:absolute;",
+                    "B. absolute-position;",
+                    "C. position=absolute;",
+                    "D. set-position:absolute;"
+                ],
+                answer: 0
+            },
+
+            {
+                question: "Which property fixes an element on screen? / Element ko screen par fixed rakhne ke liye kaunsi property use hoti hai?",
+                options: [
+                    "A. display:fixed;",
+                    "B. position:fixed;",
+                    "C. fixed:true;",
+                    "D. position=fix;"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which syntax hides an element? / Element ko hide karne ki sahi syntax kaunsi hai?",
+                options: [
+                    "A. visibility:none;",
+                    "B. display:none;",
+                    "C. hidden:true;",
+                    "D. hide:true;"
+                ],
+                answer: 1
+            },
+
+            {
+                question: "Which syntax creates a media query? / Media query ki sahi syntax kaunsi hai?",
+                options: [
+                    "A. @media screen and (max-width:768px){}",
+                    "B. media(screen<768px){}",
+                    "C. @screen(768px){}",
+                    "D. responsive(768px){}"
+                ],
+                answer: 0
+            },
+            {
+                question: "Which keyword declares a variable? / Variable declare karne ke liye kaunsa keyword use hota hai?",
+                options: ["A. int", "B. var", "C. string", "D. define"],
+                answer: 1
+            },
+
+            {
+                question: "Which keyword declares a block-scoped variable? / Block scope variable ke liye kaunsa keyword use hota hai?",
+                options: ["A. var", "B. let", "C. static", "D. define"],
+                answer: 1
+            },
+
+            {
+                question: "Which keyword declares a constant? / Constant declare karne ke liye kaunsa keyword use hota hai?",
+                options: ["A. final", "B. fixed", "C. const", "D. constant"],
                 answer: 2
             },
+
             {
-                question: "Which CSS selector selects an element by id?",
-                options: ["A. .demo", "B. #demo", "C. *demo", "D. demo#"],
+                question: "Single line comment syntax? / Single line comment ki syntax kya hai?",
+              options: ["A. &lt;!-- --&gt;", "B. ##", "C. //", "D. **"],
+                answer: 2
+
+            },
+
+            {
+                question: "typeof 10 returns? / typeof 10 kya return karega?",
+                options: ["A. string", "B. number", "C. integer", "D. object"],
                 answer: 1
             },
+
             {
-                question: "Which CSS selector selects elements by class?",
-                options: ["A. #box", "B. *box", "C. .box", "D. box."],
+                question: "Which operator checks value and datatype both? / Value aur datatype dono check karne wala operator?",
+                options: ["A. ==", "B. =", "C. ===", "D. !="],
                 answer: 2
             },
+
             {
-                question: "Which syntax correctly applies CSS to all paragraphs?",
-                options: ["A. p {color:red;}", "B. .p {color:red;}", "C. #p {color:red;}", "D. paragraph {color:red;}"],
-                answer: 0
-            },
-            {
-                question: "Which syntax correctly sets position absolute?",
-                options: ["A. position:absolute;", "B. position=absolute;", "C. absolute-position:true;", "D. set-position:absolute;"],
-                answer: 0
-            },
-            {
-                question: "Which syntax correctly fixes an element on screen?",
-                options: ["A. position:fixed;", "B. fix-position:true;", "C. position=fix;", "D. display:fixed;"],
-                answer: 0
-            },
-            {
-                question: "Which syntax correctly hides an element?",
-                options: ["A. visibility:none;", "B. display:none;", "C. hide:true;", "D. hidden:false;"],
-                answer: 1
-            },
-            {
-                question: "Which syntax correctly makes an element transparent?",
-                options: ["A. opacity:0.5;", "B. transparent:50;", "C. alpha:50;", "D. opacity=50;"],
-                answer: 0
-            },
-            {
-                question: "Which syntax correctly rotates an element?",
-                options: ["A. rotate:45deg;", "B. transform:rotate(45deg);", "C. element-rotate:45;", "D. rotation:45;"],
-                answer: 1
-            },
-            {
-                question: "Which syntax correctly scales an element?",
-                options: ["A. scale:1.2;", "B. transform:scale(1.2);", "C. zoom-scale:1.2;", "D. size:120%;"],
-                answer: 1
-            },
-            {
-                question: "Which syntax correctly creates a CSS animation?",
-                options: ["A. animation:slide 2s;", "B. animate:slide 2s;", "C. motion:slide 2s;", "D. effect:slide 2s;"],
-                answer: 0
-            },
-            {
-                question: "Which syntax correctly creates a media query?",
-                options: ["A. @media screen and (max-width:768px){}", "B. media(screen<768px){}", "C. @screen(max-width:768px){}", "D. responsive(768px){}"],
-                answer: 0
-            },
-            {
-                question: "Which W3.CSS class creates a responsive row?",
-                options: ["A. w3-grid", "B. w3-row", "C. w3-layout", "D. w3-flex-row"],
-                answer: 1
-            },
-            {
-                question: "Which W3.CSS class centers content?",
-                options: ["A. w3-align-center", "B. w3-middle", "C. w3-center", "D. w3-text-middle"],
+                question: "Which method adds item at end of array? / Array ke end me element add karne ka method?",
+                options: ["A. pop()", "B. shift()", "C. push()", "D. splice()"],
                 answer: 2
             },
+
             {
-                question: "Which W3.CSS class hides content on small screens?",
-                options: ["A. w3-hide-small", "B. w3-small-hide", "C. w3-hidden-small", "D. w3-hide-mobile"],
+                question: "Which method removes last element? / Last element remove karne ka method?",
+                options: ["A. push()", "B. pop()", "C. shift()", "D. concat()"],
+                answer: 1
+            },
+
+            {
+                question: "Which method removes first element? / First element remove karne ka method?",
+                options: ["A. shift()", "B. pop()", "C. push()", "D. splice()"],
+                answer: 0
+            },
+
+            {
+                question: "Which method adds item at beginning? / Array ke beginning me item add karne ka method?",
+                options: ["A. push()", "B. shift()", "C. unshift()", "D. splice()"],
+                answer: 2
+            },
+
+            {
+                question: "Correct IF syntax? / IF ki sahi syntax kaunsi hai?",
+                options: ["A. if x=5", "B. if(x==5)", "C. if x==5 then", "D. if:x==5"],
+                answer: 1
+            },
+
+            {
+                question: "Which loop executes at least once? / Kaunsa loop kam se kam ek baar execute hota hai?",
+                options: ["A. for", "B. while", "C. do...while", "D. foreach"],
+                answer: 2
+            },
+
+            {
+                question: "Which function displays alert box? / Alert box dikhane wala function?",
+                options: ["A. prompt()", "B. alert()", "C. confirm()", "D. display()"],
+                answer: 1
+            },
+
+            {
+                question: "Which function takes user input? / User input lene wala function?",
+                options: ["A. alert()", "B. input()", "C. prompt()", "D. confirm()"],
+                answer: 2
+            },
+
+            {
+                question: "Which function asks OK/Cancel? / OK ya Cancel puchne wala function?",
+                options: ["A. alert()", "B. prompt()", "C. ask()", "D. confirm()"],
+                answer: 3
+            },
+
+            {
+                question: "Convert JSON string into object? / JSON string ko object me convert karne wala method?",
+                options: ["A. JSON.stringify()", "B. JSON.parse()", "C. JSON.object()", "D. JSON.convert()"],
+                answer: 1
+            },
+
+            {
+                question: "Convert object into JSON string? / Object ko JSON string me convert karne wala method?",
+                options: ["A. JSON.parse()", "B. JSON.stringify()", "C. JSON.objectify()", "D. JSON.toObject()"],
+                answer: 1
+            },
+
+            {
+                question: "Select element by id? / ID se element select karne ka method?",
+                options: ["A. querySelector()", "B. getById()", "C. getElementById()", "D. getElement()"],
+                answer: 2
+            },
+
+            {
+                question: "Select element using CSS selector? / CSS selector se element select karne ka method?",
+                options: ["A. querySelector()", "B. getElementById()", "C. getElements()", "D. selector()"],
+                answer: 0
+            },
+
+            {
+                question: "Button click event? / Button click event ka naam?",
+                options: ["A. onmouseover", "B. onclick", "C. onchange", "D. onload"],
+                answer: 1
+            },
+
+            {
+                question: "Page load event? / Page load hone par kaunsa event chalta hai?",
+                options: ["A. onsubmit", "B. onchange", "C. onload", "D. onclick"],
+                answer: 2
+            },
+
+            {
+                question: "Form value change event? / Form value change hone par kaunsa event chalta hai?",
+                options: ["A. onchange", "B. onload", "C. onfocus", "D. onclick"],
+                answer: 0
+            },
+
+            {
+                question: "Array.isArray() returns? / Array.isArray() kya return karta hai?",
+                options: ["A. Array", "B. Object", "C. Boolean", "D. String"],
+                answer: 2
+            },
+
+            {
+                question: "Join array into string? / Array ko string me convert karne ka method?",
+                options: ["A. join()", "B. split()", "C. concat()", "D. slice()"],
+                answer: 0
+            },
+
+            {
+                question: "Convert string to uppercase? / String ko uppercase me convert karne ka method?",
+                options: ["A. upper()", "B. uppercase()", "C. toUpperCase()", "D. toUpper()"],
+                answer: 2
+            },
+
+            {
+                question: "Convert string to lowercase? / String ko lowercase me convert karne ka method?",
+                options: ["A. lower()", "B. toLowerCase()", "C. lowercase()", "D. downcase()"],
+                answer: 1
+            },
+
+            {
+                question: "Which method finds array length? / Array length nikalne ke liye kya use hota hai?",
+                options: ["A. size()", "B. count()", "C. length", "D. total"],
+                answer: 2
+            },
+
+            {
+                question: "Which method combines arrays? / Arrays ko combine karne ka method?",
+                options: ["A. merge()", "B. concat()", "C. push()", "D. join()"],
+                answer: 1
+            },
+
+            {
+                question: "Which method extracts part of array? / Array ka part nikalne ka method?",
+                options: ["A. splice()", "B. split()", "C. slice()", "D. join()"],
+                answer: 2
+            },
+
+            {
+                question: "Which method removes/adds elements? / Array me add/remove karne ka method?",
+                options: ["A. splice()", "B. slice()", "C. split()", "D. join()"],
+                answer: 0
+            },
+            {
+                question: "AngularJS is maintained by? / AngularJS ko kis company ne develop kiya?",
+                options: ["A. Microsoft", "B. Google", "C. Meta", "D. Amazon"],
+                answer: 1
+            },
+
+            {
+                question: "AngularJS app initialize karne ki directive?",
+                options: ["A. ng-start", "B. ng-app", "C. ng-init", "D. ng-controller"],
+                answer: 1
+            },
+
+            {
+                question: "Data binding directive?",
+                options: ["A. ng-bind", "B. ng-model", "C. ng-repeat", "D. ng-show"],
+                answer: 0
+            },
+
+            {
+                question: "Input binding directive?",
+                options: ["A. ng-bind", "B. ng-model", "C. ng-controller", "D. ng-view"],
+                answer: 1
+            },
+
+            {
+                question: "Repeat HTML elements directive?",
+                options: ["A. ng-copy", "B. ng-repeat", "C. ng-loop", "D. ng-for"],
+                answer: 1
+            },
+
+            {
+                question: "Hide element directive?",
+                options: ["A. ng-hide", "B. ng-delete", "C. ng-remove", "D. ng-invisible"],
+                answer: 0
+            },
+
+            {
+                question: "Show element directive?",
+                options: ["A. ng-visible", "B. ng-show", "C. ng-open", "D. ng-display"],
+                answer: 1
+            },
+
+            {
+                question: "Click event directive?",
+                options: ["A. ng-click", "B. ng-event", "C. ng-tap", "D. ng-press"],
+                answer: 0
+            },
+
+            {
+                question: "Conditional directive?",
+                options: ["A. ng-condition", "B. ng-if", "C. ng-check", "D. ng-case"],
+                answer: 1
+            },
+
+            {
+                question: "AJAX request service?",
+                options: ["A. $request", "B. $ajax", "C. $http", "D. $service"],
+                answer: 2
+            },
+
+            {
+                question: "AngularJS expression syntax?",
+                options: ["A. [[ ]]", "B. {{ }}", "C. (( ))", "D. << >>"],
+                answer: 1
+            },
+
+            {
+                question: "Controller aur View ko connect karne wala object?",
+                options: ["A. $route", "B. $scope", "C. $model", "D. $root"],
+                answer: 1
+            },
+
+            {
+                question: "AngularJS architecture?",
+                options: ["A. MVC", "B. MVP", "C. MVVM", "D. Both MVC and MVVM"],
+                answer: 3
+            },
+
+            {
+                question: "External HTML include directive?",
+                options: ["A. ng-load", "B. ng-html", "C. ng-import", "D. ng-include"],
+                answer: 3
+            },
+
+            {
+                question: "URL change service?",
+                options: ["A. $scope", "B. $http", "C. $location", "D. $window"],
+                answer: 2
+            },
+
+            {
+                question: "W3.CSS container class?",
+                options: ["A. w3-box", "B. w3-container", "C. w3-wrapper", "D. w3-content"],
+                answer: 1
+            },
+
+            {
+                question: "W3.CSS button class?",
+                options: ["A. w3-btn", "B. w3-button", "C. w3-click", "D. w3-control"],
+                answer: 1
+            },
+
+            {
+                question: "W3.CSS card class?",
+                options: ["A. w3-card", "B. w3-shadow", "C. w3-panel", "D. w3-box"],
+                answer: 0
+            },
+
+            {
+                question: "W3.CSS center class?",
+                options: ["A. w3-align", "B. w3-middle", "C. w3-center", "D. w3-text-center"],
+                answer: 2
+            },
+
+            {
+                question: "W3.CSS hide class?",
+                options: ["A. w3-hide", "B. w3-hidden", "C. w3-none", "D. w3-display-none"],
+                answer: 0
+            },
+
+            {
+                question: "W3.CSS responsive image class?",
+                options: ["A. w3-img", "B. w3-image", "C. w3-responsive", "D. w3-fluid"],
+                answer: 1
+            },
+
+            {
+                question: "W3.CSS blue background class?",
+                options: ["A. w3-primary", "B. w3-blue", "C. w3-bg-blue", "D. w3-color-blue"],
+                answer: 1
+            },
+
+            {
+                question: "W3.CSS modal class?",
+                options: ["A. w3-popup", "B. w3-window", "C. w3-modal", "D. w3-dialog"],
+                answer: 2
+            },
+
+            {
+                question: "Firebase cloud database service?",
+                options: ["A. Firestore", "B. SQL", "C. MongoDB", "D. Oracle"],
+                answer: 0
+            },
+
+            {
+                question: "Firestore data save method?",
+                options: ["A. addDoc()", "B. saveDoc()", "C. insertDoc()", "D. createDoc()"],
                 answer: 0
             }
         ];

@@ -1436,7 +1436,76 @@
             }
 
         }
+// Right Click Disable
+document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+});
 
+// Copy Disable
+document.addEventListener("copy", function(e){
+    e.preventDefault();
+});
+
+// Cut Disable
+document.addEventListener("cut", function(e){
+    e.preventDefault();
+});
+
+// Paste Disable
+document.addEventListener("paste", function(e){
+    e.preventDefault();
+});
+
+// Developer Tools Disable
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "F12"){
+        e.preventDefault();
+    }
+
+    if(e.ctrlKey && e.shiftKey && e.key === "I"){
+        e.preventDefault();
+    }
+
+    if(e.ctrlKey && e.shiftKey && e.key === "J"){
+        e.preventDefault();
+    }
+
+    if(e.ctrlKey && e.shiftKey && e.key === "C"){
+        e.preventDefault();
+    }
+
+    if(e.ctrlKey && e.key === "U"){
+        e.preventDefault();
+    }
+
+});
+
+// Full Screen Exit Detect
+document.addEventListener("fullscreenchange", function(){
+
+    if(!document.fullscreenElement){
+
+        alert("Fullscreen Exit Detected");
+
+        showResult();
+
+    }
+
+});
+
+// Tab Change Detect
+document.addEventListener("visibilitychange", function(){
+
+    if(document.hidden){
+
+        alert("Tab Change Detected");
+
+        showResult();
+
+    }
+
+});
     </script>
 </body>
 

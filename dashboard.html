@@ -172,11 +172,13 @@ doc
 from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
 const firebaseConfig = {
-
-apiKey: "AIzaSyCZ8Od1KTOFTNL2yUN72Fxv1EFWRFZaid4",
-authDomain: "mcq-test-ee55a.firebaseapp.com",
-projectId: "mcq-test-ee55a",
-
+  apiKey: "AIzaSyCZ8Od1KTOFTNL2yUN72Fxv1EFWRFZaid4",
+  authDomain: "mcq-test-ee55a.firebaseapp.com",
+  projectId: "mcq-test-ee55a",
+  storageBucket: "mcq-test-ee55a.firebasestorage.app",
+  messagingSenderId: "966944827158",
+  appId: "1:966944827158:web:2d0b89ead01a1c68ebd237",
+  measurementId: "G-Y3F5VFX2XT"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -210,11 +212,16 @@ id: document.id,
 
 uniqueStudents.add(d.studentName);
 
-totalScore += Number(d.percentage || 0);
+const score =
+parseFloat(
+String(d.percentage || 0).replace("%","")
+);
 
-if(Number(d.percentage) > highestScore){
+totalScore += isNaN(score) ? 0 : score;
 
-highestScore = Number(d.percentage);
+if(score > highestScore){
+
+highestScore = score;
 
 }
 
@@ -257,12 +264,15 @@ uniqueStudents.size;
 document.getElementById("totalAttempts").innerText =
 allData.length;
 
-document.getElementById("averageScore").innerText =
-(allData.length
+const avgScore =
+allData.length > 0
 ?
 (totalScore / allData.length).toFixed(2)
 :
-0) + "%";
+0;
+
+document.getElementById("averageScore").innerText =
+avgScore + "%";
 
 document.getElementById("highestScore").innerText =
 highestScore + "%";
@@ -286,9 +296,17 @@ loadData();
 function loadTopperList(){
 
 const sorted =
-[...allData].sort(
-(a,b)=>b.percentage-a.percentage
-);
+[...allData].sort((a,b)=>{
+
+const p1 =
+parseFloat(String(a.percentage || 0).replace("%",""));
+
+const p2 =
+parseFloat(String(b.percentage || 0).replace("%",""));
+
+return p2 - p1;
+
+});
 
 let html="";
 

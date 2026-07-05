@@ -30,6 +30,38 @@ background:white;
 </head>
 
 <body>
+  <script>
+
+if(
+localStorage.getItem("adminLogin")
+!== "true"
+){
+
+window.location.href =
+"login.html";
+
+}
+
+  </script>
+  <button
+class="btn btn-danger"
+onclick="logout()">
+Logout
+  </button>
+  <script>
+
+function logout(){
+
+localStorage.removeItem(
+"adminLogin"
+);
+
+window.location.href =
+"login.html";
+
+}
+
+  </script>
 
 <div class="container-fluid p-4">
 

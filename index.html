@@ -1392,12 +1392,12 @@
         const totalQuestions = questions.length;
         var cQuestion = 0;
         var answers = Array(totalQuestions).fill(null);
-        var timerDuration = 1725 * 1000;
+        var timerDuration = 2300 * 1000;
         var quizElement = document.getElementById("quiz");
         var prevBtn = document.getElementById("prevBtn");
         var nextBtn = document.getElementById("nextBtn");
         var submitBtn = document.getElementById("submitBtn");
-        let timeLeft = 15;
+        let timeLeft = 20;
         let questionTimer;
         function renderQuestion() {
             var questionData = questions[cQuestion];
@@ -1405,7 +1405,7 @@
 <div class="question">
     <div style="display:flex;justify-content:space-between;align-items:center;">
         <h2>Question ${cQuestion + 1}</h2>
-        <h2 style="color:red"><img src="clock.png"width="45"height="30px"> <span id="timer">15</span>s</h2>
+        <h2 style="color:red"><img src="clock.png"width="45"height="30px"> <span id="timer">20</span>s</h2>
     </div>
 
     <p>${questionData.question}</p>
@@ -1443,7 +1443,7 @@
 
             clearInterval(questionTimer);
 
-            timeLeft = 15;
+            timeLeft = 20;
 
             document.getElementById("timer").innerText = timeLeft;
 

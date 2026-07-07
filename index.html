@@ -1973,7 +1973,10 @@ answer:0
 
             });
             quizElement.innerHTML = resultHTML;
-
+           window.scrollTo({
+            top:0;
+            behavior:"smooth"
+            });
             nextBtn.style.display = "none";
             submitBtn.style.display = "none";
         }
